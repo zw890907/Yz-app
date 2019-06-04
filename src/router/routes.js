@@ -1,5 +1,5 @@
 const Home = () => import('@/views/Home')
-const Mall = () => import('@/views/Mall')
+const Like = () => import('@/views/Like')
 const Find = () => import('@/views/Find')
 const Card = () => import('@/views/Card')
 const Mine = () => import('@/views/Mine')
@@ -12,23 +12,23 @@ export default [
         component: Home
     },
     {
-        path: '/Mall',
-        name: 'Mall',
-        component: Mall
+        path: '/like',
+        name: 'like',
+        component: Like
     },
     {
-        path: '/Find',
-        name: 'Find',
+        path: '/find',
+        name: 'find',
         component: Find
     },
     {
-        path: '/Card',
-        name: 'Card',
+        path: '/card',
+        name: 'card',
         component: Card
     },
     {
-        path: '/Mine',
-        name: 'Mine',
+        path: '/mine',
+        name: 'mine',
         component: Mine
     }
 ]

@@ -4,8 +4,7 @@
             <YzHeader ></YzHeader>
         </div>
         <div class="Yz-app-main">
-            <!-- <router-view></router-view> -->
-            main
+            <router-view></router-view>
         </div>
         <div class="Yz-app-footer">
             <YzFooter></YzFooter>
@@ -40,6 +39,9 @@
     url('//at.alicdn.com/t/font_1228122_0i7f3toiw8rg.woff') format('woff'),
     url('//at.alicdn.com/t/font_1228122_0i7f3toiw8rg.ttf') format('truetype'),
     url('//at.alicdn.com/t/font_1228122_0i7f3toiw8rg.svg#iconfont') format('svg');
+}
+.icon {
+    font-family: 'iconfont';
 }
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -91,13 +93,8 @@ body {
         height: 100%;
         display: flex;
         flex-direction: column;
-
         &-main {
             flex: 1;
-        }
-
-        &-footer {
-            height: 50px;
         }
     }
 }
