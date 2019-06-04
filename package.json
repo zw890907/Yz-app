@@ -3,12 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "st": "npm run serve",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "core-js": "^2.6.5",
+    "mint-ui": "^2.2.13",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.1.0",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3"
   },
@@ -31,7 +35,16 @@
       "plugin:vue/essential",
       "@vue/standard"
     ],
-    "rules": {},
+    "rules": {
+      "indent": "off",
+      "vue/script-indent": [
+        "error",
+        4,
+        {
+          "baseIndent": 1
+        }
+      ]
+    },
     "parserOptions": {
       "parser": "babel-eslint"
     }
