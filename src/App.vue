@@ -1,7 +1,7 @@
 <template>
     <div class="Yz-app">
         <div class="Yz-app-header">
-            <YzHeader ></YzHeader>
+            <YzHeader></YzHeader>
         </div>
         <div class="Yz-app-main">
             <router-view></router-view>
@@ -15,22 +15,26 @@
 <script>
     import YzHeader from '@/components/YzHeader'
     import YzFooter from '@/components/YzFooter'
-    import { Toast } from 'mint-ui'
+    // import { Toast } from 'mint-ui'
     export default {
         components: {
             YzHeader,
             YzFooter
         },
         created () {
-            Toast({
-                message: '操作成功',
-                iconClass: 'icon icon-success'
-            })
+            // Toast({
+            //     message: '操作成功',
+            //     iconClass: 'icon icon-success'
+            // })
+            // Indicator Indicator.open('加载中...')
         }
     }
 </script>
 
 <style lang="scss">
+$grey: #eee;
+$deepGrey: #383838;
+$mainColor: #fc454a;
 @font-face {
     font-family: 'iconfont';  /* project id 1228122 */
     src: url('//at.alicdn.com/t/font_1228122_0i7f3toiw8rg.eot');
@@ -93,8 +97,20 @@ body {
         height: 100%;
         display: flex;
         flex-direction: column;
+
+        &-header {
+            height: 50px;
+            background-color:#fc454a;
+            border-bottom: 1px solid #ededed;
+        }
+
         &-main {
             flex: 1;
+            overflow-x: hidden;
+        }
+
+        &-footer {
+            color: $deepGrey;
         }
     }
 }
