@@ -1,6 +1,9 @@
 <template>
     <div>
-        <div class="yz-cart-container">
+        <div v-if="isCartEmpty">
+            购物车是空的，去逛逛~~
+        </div>
+        <div class="yz-cart-container" v-else>
             <YzCartItem
                 v-for="item in cart"
                 :key="item.id"
@@ -30,10 +33,10 @@
         },
         computed: {
             ...mapState(['cart']),
-            ...mapGetters(['totalCount', 'totalChecked', 'totalCheckedPrice'])
+            ...mapGetters(['totalCount', 'totalChecked', 'totalCheckedPrice', 'isCartEmpty'])
         },
         created () {
-            console.log(this.cart)
+            // console.log(this.cart)
         }
     }
 </script>

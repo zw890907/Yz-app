@@ -16,5 +16,8 @@ export default {
             total += current.isCheck ? current.price * current.count : 0
             return total
         }, 0)
+    },
+    isCartEmpty (state) {
+        return state.cart.length === 0
     }
 }

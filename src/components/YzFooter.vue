@@ -4,6 +4,7 @@
             v-for="tabbar in tabbars"
             :key="tabbar.name"
             :to="tabbar.path"
+            :event="$route.path.includes(tabbar.path) ? '' : 'click'"
             tag="li"
         >
             <i class="icon" v-html="tabbar.meta.icon"></i>

@@ -10,12 +10,16 @@
         </div>
         <p class="yz-detail-title">{{detail.title}}</p>
         <p class="yz-detail-price">￥ {{detail.price}}</p>
-        <button>加入购物车</button>
+        <button @click="onAddCart({...detail})">加入购物车</button>
     </div>
 </template>
 
 <script>
     import * as ajax from '@/request'
+    import {
+        mapMutations
+    } from 'vuex'
+
     export default {
         data () {
             return {
@@ -29,6 +33,9 @@
                 console.log(resp)
                 this.detail = resp.data.detail
             })
+        },
+        methods: {
+            ...mapMutations(['onAddCart'])
         }
     }
 </script>

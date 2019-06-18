@@ -9,12 +9,15 @@
             <span class="yz-item-num-saleNum"><b>{{saleNum}}</b>人已买</span>
             <span class="yz-item-num-couponValue">{{couponValue}}</span>
         </p>
-        <p class="yz-item-btn" @click.stop="onAddCart">加入购物车</p>
+        <p class="yz-item-btn" @click.stop="onAddCart({ id, image, title, price })">加入购物车</p>
     </router-link>
 </template>
 
 <script>
-    import router from '@/router/index'
+    import {
+        mapMutations
+    } from 'vuex'
+
     export default {
         props: {
             id: Number,
@@ -25,10 +28,7 @@
             couponValue: String
         },
         methods: {
-            onAddCart () {
-                // console.log(this.id)
-                router.push('/card')
-            }
+            ...mapMutations(['onAddCart'])
         }
     }
 
