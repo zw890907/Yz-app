@@ -9,7 +9,7 @@
         >
             <i class="icon" v-html="tabbar.meta.icon"></i>
             <span>{{tabbar.meta.title}}</span>
-            <b v-if="tabbar.name === 'card'" class="count">{{totalCount}}</b>
+            <b v-if="tabbar.name === 'card'" class="count">{{totalCount | countShow}}</b>
         </router-link>
     </ul>
 </template>

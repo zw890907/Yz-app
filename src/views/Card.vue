@@ -16,7 +16,7 @@
             ></YzCartItem>
         </div>
         <P>您总共有{{totalCount}}件商品，已选中了{{totalChecked}}件商品</P>
-        <p>选中的总价为￥{{totalCheckedPrice}}元</p>
+        <p>选中的总价为￥{{totalCheckedPrice | toFix2}}元</p>
     </div>
 </template>
 

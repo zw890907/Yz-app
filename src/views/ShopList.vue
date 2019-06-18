@@ -1,5 +1,6 @@
 <template>
     <div
+        class="yz-shopList"
         v-infinite-scroll="onLoadMore"
         infinite-scroll-distance="10"
     >
@@ -15,6 +16,10 @@
         ></ShopItem>
         <p v-if="!isEnd" @click="onLoadMore">加载更多。。。</p>
         <p v-else>--底线在此，没有更多了--</p>
+        <YzBackTop
+            :distance="400"
+            container=".yz-find-main"
+        ></YzBackTop>
     </div>
 </template>
 
