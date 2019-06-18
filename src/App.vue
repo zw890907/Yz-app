@@ -7,19 +7,17 @@
             <router-view></router-view>
         </div>
         <div class="Yz-app-footer">
-            <YzFooter></YzFooter>
+            <router-view name="footer"></router-view>
         </div>
     </div>
 </template>
 
 <script>
     import YzHeader from '@/components/YzHeader'
-    import YzFooter from '@/components/YzFooter'
     // import { Toast } from 'mint-ui'
     export default {
         components: {
-            YzHeader,
-            YzFooter
+            YzHeader
         },
         created () {
             // Toast({
@@ -110,6 +108,7 @@ body {
         }
 
         &-footer {
+            height: 50px;
             color: $deepGrey;
         }
     }

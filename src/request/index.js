@@ -31,4 +31,6 @@ export const getBanner = () => ajax.get('/api/tab/1?start=0')
 
 export const getNav = () => ajax.get('api/tabs')
 
-export const getShopList = (id) => ajax.get(`/api/tab/${id}`)
+export const getShopList = (id, start = 0) => ajax.get(`/api/tab/${id}?start=${start}`)
+
+export const getDetail = id => ajax.get(`/api/detail?id=${id}`)

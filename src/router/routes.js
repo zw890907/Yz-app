@@ -1,3 +1,5 @@
+import YzFooter from '@/components/YzFooter'
+
 const Home = () => import('@/views/Home')
 const Like = () => import('@/views/Like')
 const Find = () => import('@/views/Find')
@@ -15,7 +17,10 @@ export default [
     {
         path: '/home',
         name: 'home',
-        component: Home,
+        components: {
+            default: Home,
+            footer: YzFooter
+        },
         meta: {
             isFooter: true,
             title: '首页',
@@ -25,7 +30,10 @@ export default [
     {
         path: '/like',
         name: 'like',
-        component: Like,
+        components: {
+            default: Like,
+            footer: YzFooter
+        },
         meta: {
             isFooter: true,
             title: '喜欢',
@@ -35,7 +43,10 @@ export default [
     {
         path: '/find',
         name: 'find',
-        component: Find,
+        components: {
+            default: Find,
+            footer: YzFooter
+        },
         meta: {
             isFooter: true,
             title: '发现',
@@ -52,7 +63,10 @@ export default [
     {
         path: '/card',
         name: 'card',
-        component: Card,
+        components: {
+            default: Card,
+            footer: YzFooter
+        },
         meta: {
             isFooter: true,
             title: '购物车',
@@ -62,7 +76,10 @@ export default [
     {
         path: '/mine',
         name: 'mine',
-        component: Mine,
+        components: {
+            default: Mine,
+            footer: YzFooter
+        },
         meta: {
             isFooter: true,
             title: '我的',

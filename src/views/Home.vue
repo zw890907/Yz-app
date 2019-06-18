@@ -50,6 +50,7 @@ $deepGrey: #383838;
 $mainColor: #fc454a;
 
 .yz-home {
+    overflow-x: hidden;
     .yz-home-ensure {
         display: flex;
         justify-content: space-around;

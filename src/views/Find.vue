@@ -26,9 +26,12 @@
             ajax.getNav().then(resp => {
                 // console.log(resp)
                 let { list } = resp.data
+                // console.log(list)
                 // 去掉今日推荐
                 list = list.slice(1)
                 this.lists = list
+                let { shopId = list[0].id } = resp.data.list
+                this.$router.push(`/find/${shopId}`)
             })
         }
     }
@@ -41,6 +44,7 @@ $mainColor: #fc454a;
 .yz-find {
     display: flex;
     height: 100%;
+    overflow-x: hidden;
     &-sidebar {
         width: 80px;
         background-color: $grey;

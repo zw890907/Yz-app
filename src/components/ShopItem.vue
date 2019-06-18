@@ -1,5 +1,5 @@
 <template>
-    <router-link tag="div" to="/detail" class="yz-item">
+    <router-link tag="div" :to="{name: 'detail', query: { id }}" class="yz-item">
         <div class="yz-item-img">
             <img :src="image" alt="">
         </div>
@@ -26,7 +26,7 @@
         },
         methods: {
             onAddCart () {
-                console.log(this.id)
+                // console.log(this.id)
                 router.push('/card')
             }
         }

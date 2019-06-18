@@ -1,5 +1,8 @@
 <template>
-    <div>
+    <div
+        v-infinite-scroll="onLoadMore"
+        infinite-scroll-distance="10"
+    >
         <ShopItem
             v-for="list in lists"
             :key="list.id"
@@ -10,6 +13,8 @@
             :saleNum="list.saleNum"
             :couponValue="list.couponValue"
         ></ShopItem>
+        <p v-if="!isEnd" @click="onLoadMore">加载更多。。。</p>
+        <p v-else>--底线在此，没有更多了--</p>
     </div>
 </template>
 
@@ -19,8 +24,10 @@
     export default {
         data () {
             return {
+                isEnd: false,
                 id: '',
-                lists: []
+                lists: [],
+                nextIndex: 0
             }
         },
         // created () {
@@ -30,24 +37,32 @@
         // },
         // 导航守卫
         beforeRouteEnter (to, from, next) {
-            let id = to.params.shopId
             next(vm => {
-                vm.getList(id)
+                vm.id = to.params.shopId
+                // vm.getList()
             })
         },
 
         beforeRouteUpdate (to, from, next) {
-            let id = to.params.shopId
-            this.getList(id)
+            this.id = to.params.shopId
+            this.lists = []
+            this.nextIndex = 0
+            if (document.querySelector('.yz-find-main').scrollTop === 0) this.getList()
+            // this.getList()
             next()
         },
         methods: {
             //  请求列表的方法
-            getList (id) {
-                ajax.getShopList(id).then(resp => {
-                    console.log(resp)
-                    this.lists = resp.data.items.list
+            getList () {
+                ajax.getShopList(this.id, this.nextIndex).then(resp => {
+                    // console.log(resp)
+                    this.lists = this.lists.concat(resp.data.items.list)
+                    this.nextIndex = resp.data.items.nextIndex
+                    this.isEnd = resp.data.items.isEnd
                 })
+            },
+            onLoadMore () {
+                this.getList()
             }
         },
         components: {

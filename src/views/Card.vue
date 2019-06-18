@@ -1,12 +1,40 @@
 <template>
     <div>
-        card
+        <div class="yz-cart-container">
+            <YzCartItem
+                v-for="item in cart"
+                :key="item.id"
+                :id="item.id"
+                :title="item.title"
+                :image="item.image"
+                :count="item.count"
+                :price="item.price"
+                :isCheck="item.isCheck"
+            ></YzCartItem>
+        </div>
+        <P>您总共有{{totalCount}}件商品，已选中了{{totalChecked}}件商品</P>
+        <p>选中的总价为￥{{totalCheckedPrice}}元</p>
     </div>
 </template>
 
 <script>
-    export default {
+    import YzCartItem from '@/components/YzCartItem'
+    import {
+        mapState,
+        mapGetters
+    } from 'vuex'
 
+    export default {
+        components: {
+            YzCartItem
+        },
+        computed: {
+            ...mapState(['cart']),
+            ...mapGetters(['totalCount', 'totalChecked', 'totalCheckedPrice'])
+        },
+        created () {
+            console.log(this.cart)
+        }
     }
 </script>
 
