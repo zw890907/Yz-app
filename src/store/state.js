@@ -1,4 +1,9 @@
 export default {
     cart: JSON.parse(window.localStorage.getItem('yz-cart')) || [],
-    isLogin: false
+    userInfo: JSON.parse(window.localStorage.getItem('yz-userInfo')) || {
+        id: '',
+        displayName: '',
+        avatar: '',
+        token: ''
+    }
 }

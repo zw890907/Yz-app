@@ -9,7 +9,7 @@
 <script>
     import {
         mapActions,
-        mapState
+        mapGetters
     } from 'vuex'
 
     export default {
@@ -29,7 +29,7 @@
             }
         },
         computed: {
-            ...mapState(['isLogin'])
+            ...mapGetters(['isLogin'])
         },
         watch: {
             isLogin (newVal, oldVal) {

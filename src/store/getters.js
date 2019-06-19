@@ -19,5 +19,9 @@ export default {
     },
     isCartEmpty (state) {
         return state.cart.length === 0
+    },
+    isLogin (state) {
+        // 从userInfo中取token
+        return Boolean(state.userInfo.token)
     }
 }

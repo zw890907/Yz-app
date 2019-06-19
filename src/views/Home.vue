@@ -30,6 +30,7 @@
     // 这个写法指的是把模块导出的所有方法放到ajax对象里，index可以省略
     import * as ajax from '@/request'
     export default {
+        name: 'home',
         data () {
             return {
                 banners: []

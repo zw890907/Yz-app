@@ -49,7 +49,7 @@ export default {
             state.cart.push({ ...shopInfo, count: 1, isCheck: true })
         }
     },
-    [TOGGLE_IS_LOGIN] (state, isLogin) {
-        state.isLogin = isLogin
+    [TOGGLE_IS_LOGIN] (state, userInfo) {
+        state.userInfo = userInfo
     }
 }

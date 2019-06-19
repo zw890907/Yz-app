@@ -4,7 +4,9 @@
             <YzHeader></YzHeader>
         </div>
         <div class="Yz-app-main">
-            <router-view></router-view>
+            <keep-alain include="home">
+                <router-view></router-view>
+            </keep-alain>
         </div>
         <div class="Yz-app-footer">
             <router-view name="footer"></router-view>

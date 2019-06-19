@@ -35,7 +35,7 @@ router.beforeEach((to, from, next) => {
   // console.log(to)
   // 验证登陆
   if (to.meta.isAuthRequired === true) {
-    if (store.state.isLogin === false) {
+    if (store.getters.isLogin === false) {
       // 将to的路径传给login
       next({
         name: 'login',
