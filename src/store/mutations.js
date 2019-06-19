@@ -2,7 +2,8 @@ import {
     TOGGLE_IS_CHECK,
     COUNT_DECREMENT,
     COUNT_INCREMENT,
-    ON_ADD_CART
+    ON_ADD_CART,
+    TOGGLE_IS_LOGIN
 } from './mutationtypes'
 
 export default {
@@ -47,5 +48,8 @@ export default {
         } else {
             state.cart.push({ ...shopInfo, count: 1, isCheck: true })
         }
+    },
+    [TOGGLE_IS_LOGIN] (state, isLogin) {
+        state.isLogin = isLogin
     }
 }

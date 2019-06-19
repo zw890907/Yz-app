@@ -34,3 +34,7 @@ export const getNav = () => ajax.get('api/tabs')
 export const getShopList = (id, start = 0) => ajax.get(`/api/tab/${id}?start=${start}`)
 
 export const getDetail = id => ajax.get(`/api/detail?id=${id}`)
+
+export const Login = (userInfo) => {
+    return ajax.post('http://rap2api.taobao.org/app/mock/166498/login', userInfo)
+}

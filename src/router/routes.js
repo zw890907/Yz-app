@@ -7,6 +7,7 @@ const Card = () => import('@/views/Card')
 const Mine = () => import('@/views/Mine')
 const ShopList = () => import('@/views/ShopList')
 const Detail = () => import('@/views/Detail')
+const Login = () => import('@/views/Login')
 
 export default [
     {
@@ -24,7 +25,8 @@ export default [
         meta: {
             isFooter: true,
             title: '首页',
-            icon: '&#xe633;'
+            icon: '&#xe633;',
+            isAuthRequired: false
         }
     },
     {
@@ -37,7 +39,8 @@ export default [
         meta: {
             isFooter: true,
             title: '喜欢',
-            icon: '&#xe608;'
+            icon: '&#xe608;',
+            isAuthRequired: false
         }
     },
     {
@@ -50,7 +53,8 @@ export default [
         meta: {
             isFooter: true,
             title: '发现',
-            icon: '&#xe634;'
+            icon: '&#xe634;',
+            isAuthRequired: false
         },
         children: [
             {
@@ -70,7 +74,8 @@ export default [
         meta: {
             isFooter: true,
             title: '购物车',
-            icon: '&#xe630;'
+            icon: '&#xe630;',
+            isAuthRequired: true
         }
     },
     {
@@ -83,13 +88,24 @@ export default [
         meta: {
             isFooter: true,
             title: '我的',
-            icon: '&#xe635;'
+            icon: '&#xe635;',
+            isAuthRequired: true
         }
     },
     {
         path: '/detail',
         name: 'detail',
         component: Detail,
-        meta: {}
+        meta: {
+            isAuthRequired: false
+        }
+    },
+    {
+        path: '/login',
+        name: 'login',
+        component: Login,
+        meta: {
+            isAuthRequired: false
+        }
     }
 ]
